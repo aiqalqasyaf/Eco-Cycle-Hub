@@ -68,7 +68,7 @@ CREATE TABLE RentBike (
 -- Derby does not support CHECK constraints for this logic. It must be enforced in application logic.
 
 -- Example data (optional)
-INSERT INTO Admin (Name, Email, Password) VALUES ('Admin3', 'admin1@example.com', 'password123');
+INSERT INTO Admin (Name, Email, Password) VALUES ('Admin6', 'admin1@example.com', 'password123');
 INSERT INTO "User" (Name, Email, PhoneNo, Address) VALUES ('User1', 'user1@example.com', '1234567890', '123 Main St');
 INSERT INTO Bike (Model, UserID, Color, RegistrationDate, Status, OwnershipType) VALUES ('ModelX', 1, 'Red', '2025-01-01', 'Available', 'User' );
 INSERT INTO Slot (Location, RegistrationDate, IsOccupied) VALUES ('Slot A', '2025-01-01', FALSE);
