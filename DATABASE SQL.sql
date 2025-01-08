@@ -60,7 +60,6 @@ CREATE TABLE RentBike (
     BikeID INT NOT NULL,
     DurationTime INT NOT NULL, -- Duration in minutes
     Status VARCHAR(50) NOT NULL,
-    TotalCost DECIMAL(10, 2) NOT NULL,
     FOREIGN KEY (UserID) REFERENCES "User"(UserID) ON DELETE CASCADE,
     FOREIGN KEY (BikeID) REFERENCES Bike(BikeID) ON DELETE CASCADE
 );
