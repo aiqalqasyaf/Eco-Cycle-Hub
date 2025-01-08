@@ -11,10 +11,11 @@ CREATE TABLE "User" (
 CREATE TABLE Bike (
     BikeID INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     Model VARCHAR(100) NOT NULL,
-    UserID INT NOT NULL,
+    UserID INT DEFAULT NULL, -- NULL if the bike belongs to the rental system
     Color VARCHAR(50),
     RegistrationDate DATE NOT NULL,
     Status VARCHAR(50) DEFAULT 'Available',
+    OwnershipType VARCHAR(50) NOT NULL CHECK (OwnershipType IN ('User', 'RentalSystem')), -- New attribute
     FOREIGN KEY (UserID) REFERENCES "User"(UserID) ON DELETE CASCADE
 );
 
@@ -70,5 +71,5 @@ CREATE TABLE RentBike (
 -- Example data (optional)
 INSERT INTO Admin (Name, Email, Password) VALUES ('Admin1', 'admin1@example.com', 'password123');
 INSERT INTO "User" (Name, Email, PhoneNo, Address) VALUES ('User1', 'user1@example.com', '1234567890', '123 Main St');
-INSERT INTO Bike (Model, UserID, Color, RegistrationDate, Status) VALUES ('ModelX', 1, 'Red', '2025-01-01', 'Available');
+INSERT INTO Bike (Model, UserID, Color, RegistrationDate, Status, OwnershipType) VALUES ('ModelX', 1, 'Red', '2025-01-01', 'Available', 'User' );
 INSERT INTO Slot (Location, RegistrationDate, IsOccupied) VALUES ('Slot A', '2025-01-01', FALSE);
