@@ -1,0 +1,164 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 12 Jan 2025, 5:23:16 pm
+    Author     : Aiqal
+*/
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+}
+
+p, h1 {
+    font-family:"Parkinsans", sans-serif;
+    text-align: center;;
+}
+
+.link {
+    font-family:"Parkinsas", sans-serif;
+    font-weight:400;
+    text-align: center;
+    text-decoration:none;
+    color:orange;
+}
+
+/* Container for the Entire Login Section */
+.login-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    width: 100%; /* Full width of the container */
+    max-width: 500px; /* Limit the width to make it compact */
+    margin: 10vw auto; /* Center the container on the page */
+    padding: 20px; /* Add padding around the container */
+    border: 1px solid #ccc; /* Optional: Add a border for visibility */
+    border-radius: 30px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    background-color: #e2efff; /* Optional: Set background color */
+    height:470px;
+}
+
+/* Login Text Styling */
+#login-text {
+    font-size: 3.5rem; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center-align the text */
+    margin-bottom:50px;
+    color:#004aad;
+    margin-top:0px;
+}
+
+/* Form Group (Label and Input) */
+.form-group {
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+    width: 450px; /* Make inputs span the container width */
+    margin-bottom: 15px; /* Add spacing between fields */
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="password"] {
+    padding: 10px; /* Add padding inside the input */
+    font-size: 1rem; /* Adjust font size */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 30px; /* Rounded corners */
+    width: 100%; /* Full width of the container */
+    height:55px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    padding-left: 30px;
+    margin-bottom: 4px;
+}
+
+/* Submit Button */
+.submit-btn {
+    padding: 10px 20px; /* Add padding to the button */
+    font-size: 1.25rem; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    color: #fff; /* White text */
+    background-color: #0055af; /* Blue background */
+    border: none; /* Remove border */
+    border-radius: 30px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    width: 200px; /* Button spans the form width */
+    text-align: center; /* Center the text */
+    margin-left:127px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height:50px;
+    transition: all 300ms ease;
+}
+
+.submit-btn:hover {
+    background-color: #3483d7; /* Darker blue on hover */
+}
+
+.submit-btn:active {
+    background-color: rgb(10, 36, 120);
+}
+
+input::placeholder {
+    color: #888; /* Light gray placeholder text */
+}
+
+/* Optional: Style input focus state */
+input:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #064f9d; /* Highlight border when focused */
+    background-color: #f9f9f9; /* Subtle background change */
+}
+
+/* Background image styling */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/home-pic-1.webp');
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    z-index: -1; /* Ensures it stays behind other elements */
+}
+
+/* Ensure the login container and header are above the background */
+header, .login-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Role selection styling */
+.role-selection {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center; /* Center align the radio buttons */
+    gap: 25px; /* Add spacing between the radio buttons */
+    font-size: 16px;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+.role-selection label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family:"Parkinsans", sans-serif;
+}
+
+.role-selection input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.35);
+}
+
+#page-logo {
+    margin-left:0px;
+    flex-shrink:1;
+}
+
+

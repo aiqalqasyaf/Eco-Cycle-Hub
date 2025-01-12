@@ -1,0 +1,212 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 12 Jan 2025, 7:14:30 pm
+    Author     : Aiqal
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family:"Parkinsans", sans-serif;
+
+}
+
+.pic-container {
+    position: relative;
+    width: 100%; /* Set your desired width */
+    height: 500px; /* Set your desired height */
+    overflow: hidden; /* Optional, prevents any overflow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:60px;
+}
+
+#home-pic-1 {
+    width: 100%; /* Ensures the image spans the full width of the container */
+    height: 100%; /* Ensures the image spans the full height of the container */
+    object-fit: cover; /* Ensures the image fills the container, possibly cropping */
+    object-position: center; /* Center the image within the container */
+}
+
+.color-tint {
+    position: absolute;
+    top: 0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(93, 141, 231, 0.5); /* Black tint with 50% opacity */
+    pointer-events: none; /* Allows clicks to pass through the overlay */
+    z-index: 1; /* Ensures the overlay is above the image */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%; /* Center the text vertically */
+    left: 50%; /* Center the text horizontally */
+    transform: translate(-50%, -50%); /* Adjust for accurate centering */
+    color: white; /* Text color */
+    font-size: 2rem; /* Adjust font size as needed */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center-align text */
+    z-index: 2; /* Ensures the text is above the tint */
+    pointer-events: none; /* Prevents the text from blocking interactions */
+
+    font-family:"Parkinsans",sans-serif;
+    font-size:80px;
+}
+
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center children horizontally */
+    text-align: center; /* Align text inside the wrapper */
+    width: 100%; /* Full width */
+    margin: 0 auto; /* Ensure wrapper itself is centered */
+}
+
+#tagline {
+    font-size:35px;
+    color:#004aad;
+    font-weight:700;
+    text-align:center;
+    margin: 30px 0 10px 0;
+}
+
+
+/* Container for Orange Line */
+#sec-orange-line {
+    width: 100%; /* Ensure the line container takes full width */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center the line horizontally */
+    margin: 0; /* Remove any additional spacing */
+}
+
+/* Orange Line Styling */
+#another-orange-line {
+    width: 720px; /* Width of the line */
+    height: 4px; /* Thickness of the line */
+    background-color: orange; /* Orange color */
+    border-radius: 2px; /* Rounded edges */
+}
+
+#pic-2 {
+    height:600px;
+}
+
+.color-tint-2 {
+    position: absolute;
+    top: 0;
+    right:0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(12, 72, 183, 0.95); /* Black tint with 50% opacity */
+    pointer-events: none; /* Allows clicks to pass through the overlay */
+    z-index: 1; /* Ensures the overlay is above the image */
+}
+
+.text-overlay2 {
+    position: absolute;
+    top: 20%; /* Center the text vertically */
+    right: 0%; /* Center the text horizontally */
+    transform: translate(-50%, -50%); /* Adjust for accurate centering */
+    color: white; /* Text color */
+    font-size: 2rem; /* Adjust font size as needed */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center-align text */
+    z-index: 2; /* Ensures the text is above the tint */
+    pointer-events: none; /* Prevents the text from blocking interactions */
+
+    font-family:"Parkinsans",sans-serif;
+    font-size:40px;
+}
+
+.tint-content-right {
+    position: absolute;
+    top: 53%; /* Start vertically centered */
+    right: 20%; /* Add some padding from the left edge of the tint */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    color: white; /* Make text white for contrast */
+    font-family: "Parkinsans", sans-serif; /* Adjust font as needed */
+    pointer-events: auto; /* Allow interactions with the content */
+    z-index: 2; /* Ensure it’s above the tint */
+}
+
+/* Individual Item Styling */
+.tint-content-right .item {
+    margin-bottom: 60px; /* Add spacing between items */
+}
+
+.tint-content-right h3 {
+    font-size: 2rem; /* Adjust heading size */
+    margin: 0 0 5px 0; /* Add space below heading */
+}
+
+.tint-content-right p {
+    font-size: 1.5rem; /* Adjust paragraph size */
+    margin: 0; /* Remove default margins */
+}
+
+#pic-3 {
+    margin:0;
+    height:600px;
+}
+
+
+#home-pic-2 {
+    width: 100%; /* Ensures the image spans the full width of the container */
+    height: 100%; /* Ensures the image spans the full height of the container */
+    object-fit: cover; /* Ensures the image fills the container, possibly cropping */
+    object-position: center; /* Center the image within the container */
+}
+
+#home-pic-3 {
+    width: 100%; /* Ensures the image spans the full width of the container */
+    height: 100%; /* Ensures the image spans the full height of the container */
+    object-fit: cover; /* Ensures the image fills the container, possibly cropping */
+    object-position: center; /* Center the image within the container */
+}
+
+.tint-content-left {
+    position: absolute;
+    top: 57%; /* Start vertically centered */
+    left:5%; /* Add some padding from the left edge of the tint */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    color: white; /* Make text white for contrast */
+    font-family: "Parkinsans", sans-serif; /* Adjust font as needed */
+    pointer-events: auto; /* Allow interactions with the content */
+    z-index: 2; /* Ensure it’s above the tint */
+}
+
+.tint-content-left .item {
+    margin-bottom: 60px; /* Add spacing between items */
+}
+
+.tint-content-left h3 {
+    font-size: 2rem; /* Adjust heading size */
+    margin: 0 0 5px 0; /* Add space below heading */
+}
+
+.tint-content-left p {
+    font-size: 1.5rem; /* Adjust paragraph size */
+    margin: 0; /* Remove default margins */
+}
+
+.color-tint-3 {
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(12, 72, 183, 0.95); /* Black tint with 50% opacity */
+    pointer-events: none; /* Allows clicks to pass through the overlay */
+    z-index: 1; /* Ensures the overlay is above the image */
+}
+
