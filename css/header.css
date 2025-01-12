@@ -1,0 +1,62 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 12 Jan 2025, 5:22:45 pm
+    Author     : Aiqal
+*/
+.header-container {
+    background-color: rgb(26, 94, 222);
+    font-family: "Parkinsans", sans-serif;
+    color:white;
+    font-weight: 600;
+    font-size: 22px;
+    height:100px;
+    display:flex;
+}
+
+.header-items {
+    align-content:center;
+    justify-content: center;
+    width:200px;
+    text-align:center;
+    align-items:center;
+    flex-basis:150px;
+    flex-shrink: 0;
+    flex-grow:1;
+}
+
+.navigation-items {
+    color:white;
+    text-decoration:none;
+}
+
+#page-logo {
+    margin-left:30px;
+    flex-shrink:1;
+}
+
+#login-button {
+    flex-shrink:1;
+}
+
+#blank-space {
+    width:700px;
+    
+}
+
+#user-icon {
+    height:50px;
+    align-self:center;
+    display:inline;
+    flex-shrink: 0;
+}
+
+#orange-line {
+    height:10px;
+    background-color:orange;
+    width:100%;
+}
+
+
