@@ -3,8 +3,9 @@
     Created on : 15 Jan 2025, 8:43:50 pm
     Author     : Aiqal
 --%>
-
+<%@ page import="util.PasswordUtils" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,7 +30,7 @@
                     <a
                         class="navigation-items"
                         style="display: inline"
-                        href="/html/index.html"
+                        href="home.jsp"
                         >Home</a
                     >
                 </div>
@@ -37,7 +38,7 @@
                     <a
                         class="navigation-items"
                         style="display: inline"
-                        href="/html/services.html"
+                        href="services.jsp"
                         >Services</a
                     >
                 </div>
@@ -59,7 +60,7 @@
                         class="navigation-items"
                         style="display: inline; margin-right: 70px"
                         href="profile.jsp"
-                        >User</a
+                        ><%= session.getAttribute("username") %></a
                     >
                 </div>
             </div>
@@ -73,27 +74,44 @@
                     <p id="heading1">User Details</p>
                 </div>
                 <div class="user-info-row">
-                    <label>Full Name</label>
+                    <label>Username</label>
                     <p id="user-fullname">
-                        <%= request.getAttribute("fullname") %>
+                        <%= session.getAttribute("username") != null ? session.getAttribute("username") : "" %>
                     </p>
                 </div>
+                    <div class="user-info-row">
+                    <label>Password</label>
+                    <p id="user-password">
+                         <%= PasswordUtils.maskPassword((String) session.getAttribute("password")) %>
+                    </p>
+                </div>
+
                 <div class="user-info-row">
                     <label>Email</label>
-                    <p id="user-email"><%= request.getAttribute("email") %></p>
+                    <p id="user-email">
+                        <%= session.getAttribute("email") != null ? session.getAttribute("email") : "" %>
+                    </p>
                 </div>
                 <div class="user-info-row">
                     <label>Address</label>
                     <p id="user-address">
-                        <%= request.getAttribute("address") %>
+                        <%= session.getAttribute("address") != null ? session.getAttribute("address") : "" %>
                     </p>
                 </div>
                 <div class="user-info-row">
                     <label>Phone Number</label>
-                    <p id="user-phone"><%= request.getAttribute("phone") %></p>
+                    <p id="user-phone">
+                        <%= session.getAttribute("phone") != null ? session.getAttribute("phone") : "" %>
+                    </p>
                 </div>
             </div>
-
+                     <%-- Display failed message --%>
+                    <c:if test="${not empty errorMessage}">
+                        <div style="color: red; text-align: center;">
+                            <p>${errorMessage}</p>
+                        </div>
+                    </c:if>
+                    
             <button
                 class="edit-button"
                 onclick="document.getElementById('editModal').style.display='flex'"
@@ -112,25 +130,45 @@
                     &times;
                 </button>
                 <h3>Edit Profile</h3>
-                <form action="/updateProfile" method="post">
+                <form action="UpdateProfileServlet" method="POST">
                     <label for="edit-fullname">Full Name</label>
-                    <input type="text" id="edit-fullname" name="fullname"
-                    value="<%= request.getAttribute("fullname") %>" />
+                    <input type="text" id="edit-fullname" name="username"
+                    value="<%= session.getAttribute("username") != null ? session.getAttribute("username") : "" %>" />
 
                     <label for="edit-email">Email</label>
-                    <input type="email" id="edit-email" name="email" value="<%=
-                    request.getAttribute("email") %>" />
+                    <input type="email" id="edit-email" name="email" 
+                    value="<%= session.getAttribute("email") != null ? session.getAttribute("email") : "" %>" />
+                    
+                    <label for="edit-password">Password</label>
+                     <div class="password-container">
+                        <input type="password" id="edit-password" name="password"
+                               value="<%= session.getAttribute("password") %>" />
+                        <input type="checkbox" id="show-password" onclick="togglePassword()">Show Password
+                    </div>
 
                     <label for="edit-address">Address</label>
                     <input type="text" id="edit-address" name="address"
-                    value="<%= request.getAttribute("address") %>" />
+                    value="<%= session.getAttribute("address") != null ? session.getAttribute("address") : "" %>" />
 
                     <label for="edit-phone">Phone Number</label>
-                    <input type="tel" id="edit-phone" name="phone" value="<%=
-                    request.getAttribute("phone") %>" />
+                    <input type="tel" id="edit-phone" name="phone" 
+                    value="<%= session.getAttribute("phone") != null ? session.getAttribute("phone") : "" %>" />
 
                     <button class="save-button" type="submit">Save</button>
                 </form>
+                    
+                    <script>
+                        function togglePassword() {
+                            var passwordField = document.getElementById("edit-password");
+                            var showPasswordCheckbox = document.getElementById("show-password");
+
+                            if (showPasswordCheckbox.checked) {
+                                passwordField.type = "text";
+                            } else {
+                                passwordField.type = "password";
+                            }
+                        }
+                    </script>
             </div>
         </div>
     </body>

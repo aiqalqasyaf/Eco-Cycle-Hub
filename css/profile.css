@@ -98,7 +98,7 @@ header, .login-container {
     font-family: "Parkinsans", sans-serif;
     flex-basis: 200px;
     text-align: left;
-    padding-right: 100px;
+    padding-right: 50px;
     padding-left:0px;
     padding-bottom:15px;
     margin-left: -125px;
@@ -110,8 +110,9 @@ header, .login-container {
     margin: 0;
     font-family: "Parkinsans", sans-serif;
     color: #555;
-    text-align: left;
-    padding-left: 20px;
+    text-align: center;
+    height:40px;
+    width:150px;
 }
 
 .edit-button {
@@ -235,3 +236,21 @@ h3 {
     padding-left:15px;
     font-size:2rem;
 }
+
+#user-fullname,
+#user-email,
+#user-address,
+#user-phone,
+#user-password {
+    background-color:white;
+    border-radius: 20px;
+    font-size:1.5rem;
+    padding-top:4px;
+}
+
+#show-password {
+    width: 50px;
+    margin:0px;
+    margin-bottom:10px;
+}
+
