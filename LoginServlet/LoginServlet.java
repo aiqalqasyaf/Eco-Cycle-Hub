@@ -12,6 +12,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  *
@@ -49,19 +50,28 @@ public class LoginServlet extends HttpServlet {
 
     // Handle authentication results
     if (userValidate.equals("SUCCESS")) {
-        request.setAttribute("username", username);
-        request.setAttribute("role", role);
+        HttpSession session = request.getSession();
+        session.setAttribute("username", username);
+        session.setAttribute("role", role);
 
-        // Redirect to the appropriate home page based on the role
+        // Assuming you fetch additional user details like email, address, and phone:
+        session.setAttribute("email", loginbean.getEmail());
+        session.setAttribute("address", loginbean.getAddress());
+        session.setAttribute("phone", loginbean.getPhone());
+        session.setAttribute("password", loginbean.getPassword());
+
+        // Redirect based on the role
         if ("admin".equals(role)) {
-            request.getRequestDispatcher("/home.jsp").forward(request, response); // Admin-specific page
+            request.getRequestDispatcher("/home.jsp").forward(request, response);
         } else if ("user".equals(role)) {
-            request.getRequestDispatcher("/home.jsp").forward(request, response); // User-specific page
+            request.getRequestDispatcher("/home.jsp").forward(request, response);
         }
     } else {
         request.setAttribute("errMessage", userValidate);
-        request.getRequestDispatcher("/login.jsp").forward(request, response); // Redirect back to login page on failure
+        request.getRequestDispatcher("/login.jsp").forward(request, response);
     }
+    
+    
 }
 
 
