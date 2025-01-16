@@ -28,6 +28,9 @@ public class LoginDao {
 
         String usernameDB = null;
         String passwordDB = null;
+        String emailDB = null;
+        String addressDB = null;
+        String phoneDB = null;
         
         try {
             con = DBConnection.createConnection();
@@ -38,11 +41,14 @@ public class LoginDao {
             statement = con.createStatement();
             
             if (role.equals("user")) {
-                resultSet = statement.executeQuery("SELECT NAME, PASSWORD FROM USERS");
+                resultSet = statement.executeQuery("SELECT NAME, PASSWORD, EMAIL, ADDRESS, PHONE FROM USERS");
 
                 while (resultSet.next()) {
                     usernameDB = resultSet.getString("NAME");
                     passwordDB = resultSet.getString("PASSWORD");
+                    loginBean.setEmail(resultSet.getString("EMAIL"));
+                    loginBean.setAddress(resultSet.getString("ADDRESS"));
+                    loginBean.setPhone(resultSet.getString("PHONE"));
                 
                     if(username.equals(usernameDB) && password.equals(passwordDB))
                     return "SUCCESS";
@@ -62,6 +68,7 @@ public class LoginDao {
         
         } catch (SQLException e) {
             e.printStackTrace();
+            return "Database error.";
         }
         
         return "Invalid username or password. Please try again.";

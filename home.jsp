@@ -28,7 +28,7 @@
                     <a
                         class="navigation-items"
                         style="display: inline"
-                        href="/html/index.html"
+                        href="home.jsp"
                         >Home</a
                     >
                 </div>
@@ -36,7 +36,7 @@
                     <a
                         class="navigation-items"
                         style="display: inline"
-                        href="/html/services.html"
+                        href="services.jsp"
                         >Services</a
                     >
                 </div>
@@ -44,7 +44,7 @@
                     <a
                         class="navigation-items"
                         style="display: inline"
-                        href="#"
+                        href="profile.jsp"
                         >Profile</a
                     >
                 </div>
@@ -61,7 +61,7 @@
                         class="navigation-items"
                         style="display: inline; margin-right: 70px"
                         href="/html/profile.jsp"
-                        ><%=request.getAttribute("username")%></a
+                        ><%=session.getAttribute("username") %></a
                     >
                 </div>
             </div>
