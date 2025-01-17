@@ -1,15 +1,17 @@
 <%-- 
-    Document   : services
-    Created on : 15 Jan 2025, 3:52:16 pm
+    Document   : registerbike
+    Created on : 17 Jan 2025, 1:05:19 am
     Author     : Aiqal
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/header.css" />
-        <link rel="stylesheet" type="text/css" href="css/services.css" />
+        <link rel="stylesheet" type="text/css" href="css/registerbike.css" />
         <link
             href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
             rel="stylesheet"
@@ -68,42 +70,49 @@
             <div id="orange-line"></div>
         </header>
 
-        <div class="services-container">
-            <div class="services-item">
-                <img src="img/bike-1.webp" alt="bike" />
-                <a href="registerbike.jsp" class="button">Register a Bike</a>
-            </div>
-            <div class="services-item">
-                <img src="img/bike-2.webp" alt="bike" />
-                <a href="parkbike.jsp" class="button">Park a Bike</a>
-            </div>
-            <div class="services-item">
-                <img src="img/bike-3.webp" alt="bike" />
-                <a href="rentbike.jsp" class="button">Rent a Bike</a>
-            </div>
-            <div class="services-item"></div>
-        </div>
+        <div class="background-image"></div>
 
-        <div class="pic-container" id="pic-2">
-            <img
-                src="img/services-pic-1.webp"
-                alt="home-pic-2"
-                id="home-pic-2"
-            />
-            <div class="color-tint-2"></div>
-            <div class="tint-content-left">
-                <div class="item">
-                    <h3>WORRY LESS ABOUT YOUR BIKE</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing
-                        elit. Aenean commodo ligula eget dolor. Aenean
-                    </p>
-                    <p>
-                        massa. Cum sociis natoque penatibus et magnis dis
-                        parturient montes, nascetur ridiculus mus.
-                    </p>
+        <div class="registerBikeForm">
+            <form action="RegisterBikeServlet" method="post">
+                <div class="secondContainer">
+                    <h2 id="heading1">Register a Bike</h2>
+                    <h2>Bike Details</h2>
+                    <div class="container-items">
+                        <input
+                            type="text"
+                            id="type"
+                            name="type"
+                            placeholder="Type"
+                            required
+                        />
+                    </div>
+                    <div class="container-items">
+                        <input
+                            type="text"
+                            id="color"
+                            name="color"
+                            placeholder="Color"
+                            required
+                        />
+                    </div>
                 </div>
-            </div>
+                 <%-- Display failed registration --%>
+                <c:if test="${not empty errMessage}">
+                    <div style="color: red; text-align: center;">
+                        <p>${errMessage}</p>
+                    </div>
+                </c:if>
+                
+                <%-- Display successful bike registration --%>
+                <c:if test="${not empty successMessage}">
+                    <div style="color: green; text-align: center;">
+                        <p>${successMessage}</p>
+                    </div>
+                </c:if>
+                <div class="submitContainer">
+                    <button type="submit" class="submit-btn">Submit</button>
+                </div>
+            </form>
         </div>
     </body>
 </html>

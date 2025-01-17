@@ -1,0 +1,55 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 17 Jan 2025, 6:28:40 pm
+    Author     : Aiqal
+*/
+
+.bikes-container { 
+    display:flex;
+    width: 55%;
+    height:auto;
+    background-color: #e2efff;
+    flex-direction: column;
+    border-radius: 30px;
+    margin-left: 50px;
+    margin-top: 25px;
+    padding-bottom:20px;
+    margin-bottom:30px;
+}
+
+    .bikes-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color:#004aad;
+    }
+
+    .bikes-table {
+        width: 90%;
+        border-collapse: collapse;
+        align-self: center;
+    }
+
+    .bikes-table th,
+    .bikes-table td {
+        border: 0px solid #ddd;
+        padding: 10px;
+        text-align: center;
+        font-family: "Parkinsans";
+        font-size: 1.25rem;
+    }
+
+    .bikes-table th {
+        background-color: orange;
+        color: white;
+    }
+
+    .bikes-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .bikes-table tr:hover {
+        background-color: #ddd;
+    }

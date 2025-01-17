@@ -46,7 +46,6 @@ public class SignUpDao {
                 e.printStackTrace();
             }
         }
-
         return "Error: Unable to register user. Please try again later.";
     }
 }

@@ -3,6 +3,9 @@
     Created on : 15 Jan 2025, 8:43:50 pm
     Author     : Aiqal
 --%>
+
+<%@ page import="java.util.List" %>
+<%@ page import="bean.BikeBean" %>
 <%@ page import="util.PasswordUtils" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -12,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="css/header.css" />
         <link rel="stylesheet" type="text/css" href="css/homestyle.css" />
         <link rel="stylesheet" type="text/css" href="css/profile.css" />
+        <link rel="stylesheet" type="text/css" href="css/registeredBikes.css" />
         <link
             href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
             rel="stylesheet"
@@ -119,7 +123,44 @@
                 Edit
             </button>
         </div>
-
+                    
+        <div class="bikes-container">
+        <h2>Registered Bikes</h2>
+        <table class="bikes-table">
+        <thead>
+            <tr>
+                <th>Bike ID</th>
+                <th>Type</th>
+                <th>Color</th>
+                <th>Registration Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%
+                List<BikeBean> bikes = (List<BikeBean>) session.getAttribute("bikeList");
+                if (bikes != null && !bikes.isEmpty()) {
+                    for (BikeBean bike : bikes) {
+            %>
+            <tr>
+                <td><%= bike.getBikeId() %></td>
+                <td><%= bike.getType() %></td>
+                <td><%= bike.getColor() %></td>
+                <td><%= bike.getRegistrationDate() %></td>
+            </tr>
+            <%
+                    }
+                } else {
+            %>
+            <tr>
+                <td colspan="6" style="text-align: center;">No bikes registered under this account.</td>
+            </tr>
+            <%
+                }
+            %>
+        </tbody>
+    </table>
+</div>            
+                    
         <!-- Modal -->
         <div id="editModal" class="modal">
             <div class="modal-content">
