@@ -5,6 +5,7 @@
 package bean;
 
 public class LoginBean implements java.io.Serializable {
+    private String userID;
     private String username;
     private String password;
     private String role;
@@ -12,7 +13,16 @@ public class LoginBean implements java.io.Serializable {
     private String phone;
     private String address;
 
-    // Getters and setters
+    // Getters and setters for userID
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    // Existing getters and setters remain unchanged
     public String getUsername() {
         return username;
     }
@@ -60,7 +70,5 @@ public class LoginBean implements java.io.Serializable {
     public void setAddress(String address) {
         this.address = address;
     }
-    
-    
 }
 

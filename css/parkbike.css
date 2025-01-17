@@ -1,0 +1,141 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 17 Jan 2025, 5:53:43 pm
+    Author     : Aiqal
+*/
+body {
+    margin:0;
+    padding:0;
+}
+
+h2 {
+    font-family: "Parkinsans", sans-serif;
+    color:#004aad;
+    text-align: center;
+}
+
+#heading1 {
+    font-family:"Parkinsans",sans-serif;
+    font-size:2.5rem;
+    color:orange;
+    margin-bottom:20px;
+}
+
+.registerBikeForm {
+    display:flex;
+    width:30%;
+    background-color: #e2efff;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-radius: 30px;
+    margin:0px auto;
+    margin-top: 8vw;
+    padding-bottom:20px;
+}
+
+.firstContainer {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    width:450px;
+}
+
+.container-items {
+    display: flex;
+    flex-direction: row; /* Stack label and input vertically */
+    width:100%;
+    margin-bottom: 15px; /* Add spacing between fields */
+    align-items: center;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+input[type="datetime-local"]  {
+    padding: 10px; /* Add padding inside the input */
+    font-size: 1rem; /* Adjust font size */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 30px; /* Rounded corners */
+    width: 100%; /* Full width of the container */
+    height:55px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    padding-left: 30px;
+}
+
+input::placeholder {
+    color: #888; /* Light gray placeholder text */
+}
+
+/* Optional: Style input focus state */
+input:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #064f9d; /* Highlight border when focused */
+    background-color: #f9f9f9; /* Subtle background change */
+}
+
+.submit-btn {
+    padding: 10px 20px; /* Add padding to the button */
+    font-size: 1rem; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    color: #fff; /* White text */
+    background-color: #0055af; /* Blue background */
+    border: none; /* Remove border */
+    border-radius: 30px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    width: 200px; /* Button spans the form width */
+    text-align: center; /* Center the text */
+    justify-content: center;
+    height:50px;
+    transition: all 300ms ease;
+    margin-left:40px;
+    margin-top:20px;
+}
+
+.submit-btn:hover {
+    background-color: #3483d7; /* Darker blue on hover */
+}
+
+.submit-btn:active {
+    background-color: rgb(10, 36, 120);
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/home-pic-1.webp'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    z-index: -1; /* Ensures it stays behind other elements */
+}
+
+/* Ensure the login container and header are above the background */
+header, .login-container {
+    position: relative;
+    z-index: 1;
+}
+
+#page-logo {
+    margin-left:0px;
+    flex-shrink:1;
+}
+    
+#bikeId {
+    padding: 10px; /* Add padding inside the input */
+    font-size: 1rem; /* Adjust font size */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 30px; /* Rounded corners */
+    width: 100%; /* Full width of the container */
+    height:55px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    padding-left: 30px;
+}
+
