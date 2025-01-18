@@ -1,0 +1,239 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 18 Jan 2025, 6:14:07 pm
+    Author     : adam
+*/
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 16 Jan 2025, 5:28:14 pm
+    Author     : Aiqal
+*/
+
+body {
+    margin:0;
+    padding:0;
+}
+
+a {
+    font-family: "Parkinsas", sans-serif;
+    font-weight:600;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+h2 {
+    font-family: "Parkinsans", sans-serif;
+    font-size: 2rem;
+    color:#004aad;
+}
+
+h3 {
+    font-size:2rem;
+    margin:10px 0;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/home-pic-1.webp'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    z-index: -1; /* Ensures it stays behind other elements */
+}
+
+.services-container {
+    display:flex;
+    flex-direction: row;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    width: 100%; /* Full width of the container */
+    max-width: auto;
+    margin:50px;
+    margin-top: 60px;
+    justify-content: space-between;
+    flex-wrap:wrap;
+    margin-left:12.5vw;
+}
+
+.services-item {
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+    width: 450px; /* Make inputs span the container width */
+    margin-bottom: 15px; /* Add spacing between fields */
+    align-items: center;
+}
+
+a.button {
+    padding: 10px 0;
+    border: 3px solid rgb(56, 130, 213);
+    border-radius: 30px;
+    color: buttontext;
+    background-color: buttonface;
+    text-decoration: none;
+    width:330px;
+    background-color: white;
+    color: #323f5c;
+    transition: all 300ms ease;
+}
+
+a.button:hover {
+    background:  rgb(56, 130, 213);
+    color:white;
+    width:340px;
+    padding: 15px 0;
+}
+
+
+
+.services-caption {
+    font-size:1.5rem;
+    text-align: center;
+}
+
+.pic-container {
+    position: relative;
+    width: 100%; /* Set your desired width */
+    height: 406px; /* Set your desired height */
+    overflow: hidden; /* Optional, prevents any overflow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:60px;
+}
+
+#home-pic-2 {
+    width: 100%; /* Ensures the image spans the full width of the container */
+    height: 100%; /* Ensures the image spans the full height of the container */
+    object-fit: cover; /* Ensures the image fills the container, possibly cropping */
+    object-position: center; /* Center the image within the container */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+.color-tint-2 {
+    position: absolute;
+    top: 0;
+    right:50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(45, 93, 182, 0.8); /* Black tint with 50% opacity */
+    pointer-events: none; /* Allows clicks to pass through the overlay */
+    z-index: 1; /* Ensures the overlay is above the image */
+}
+
+.tint-content-left {
+    position: absolute;
+    top: 57%; /* Start vertically centered */
+    left:5%; /* Add some padding from the left edge of the tint */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    color: white; /* Make text white for contrast */
+    font-family: "Parkinsans", sans-serif; /* Adjust font as needed */
+    pointer-events: auto; /* Allow interactions with the content */
+    z-index: 2; /* Ensure it’s above the tint */
+}
+
+ .rent-table {
+                width: 90%;
+                margin: 20px auto;
+                border-collapse: collapse;
+                font-family: "Parkinsans", sans-serif;
+                align-self: center;
+            }
+
+            .rent-table th,
+            .rent-table td {
+                border: 0px solid #ddd;
+                padding: 8px;
+                text-align: center;
+                font-size: 1.25rem;
+            }
+
+            .rent-table th {
+                background-color: orange;
+                font-weight: bold;
+                color: white;
+            }
+
+            .rent-table tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            .rent-table tr:hover {
+                background-color: #ddd;
+            }
+
+            .rent-table-container {
+                text-align: center;
+                padding: 0px;
+                background-color: #e2efff;
+                margin-top: 30px;
+                width: 80%;
+                margin-left: 190px;
+                border-radius: 30px;
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+
+            .rent-table h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .color-select {
+                padding: 5px;
+                font-size: 14px;
+            }
+
+            .rent-btn {
+                background-color: #004aad;
+                color: white;
+                padding: 12px 30px;
+                text-decoration: none;
+                border: none;
+                border-radius: 20px;
+                cursor: pointer;
+                font-size: 1rem;
+                margin-left: 30px;
+                font-weight: 700;
+                box-shadow: 4px 5px 8px #888888;
+            }
+            
+            .rent-btn:hover {
+                opacity: 0.8;
+            }
+            
+            .rent-btn:active {
+                
+            }
+
+            .rent-btn:disabled {
+                background-color: gray;
+                cursor: not-allowed;
+            }
+            
+            .statusMessage {
+                font-size:1.5rem;
+                font-family: "Parkinsans", sans-serif;
+            }
+            
+            .duration {
+                border-radius:30px;
+                border: 2.5px solid #ccc;
+                padding: 7px;
+                font-size: 1.25rem;
+                text-align:center;
+                font-family: "Parkinsans", sans-serif;
+            }
+
+
+
